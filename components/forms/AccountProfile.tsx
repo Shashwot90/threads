@@ -67,9 +67,10 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
     }
 
     function onSubmit(values: z.infer<typeof UserValidation>) {
-        // Do something with the form values.
-        // ✅ This will be type-safe and validated.
-        console.log(values)
+        const blob = values.profile_photo;
+
+        const hasImageChanged  = isBase64Image(blob);
+        
       }
       
     return (
